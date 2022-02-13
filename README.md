@@ -53,8 +53,8 @@ Example usage:
 ```js
 auth
   .signup(email, password)
-  .then(response => debugPrint("Confirmation email sent", response))
-  .catchError(error => debugPrint("It's an error", error));
+  .then(response => debugPrint("Confirmation email sent"))
+  .catchError(error => debugPrint("It's an error"));
 ```
 
 Example response object:
@@ -101,11 +101,11 @@ Example usage:
 ```js
 auth
   .confirm(confirmationLink)
-  .then(function(response) {
-    console.log("Confirmation email sent",));
+  .then((response) {
+    debugPrint("Confirmation email sent"));
   })
-  .catchError(function(e) {
-    console.log(e);
+  .catchError((e) {
+    debugPrint(e.toString());
   });
 ```
 
@@ -145,10 +145,8 @@ Example usage:
 ```js
 auth
   .login(email.value, password.value)
-  .then(response => {
-    showMessage("Success! Response: " , form);
-  })
-  .catchError(error => showMessage("Failed" );
+  .then(response => showMessage("Success! Response: " , form))
+  .catchError(error => showMessage("Failed"));
 ```
 
 Example response object:
@@ -195,8 +193,8 @@ Example usage:
 ```js
 auth
   .requestPasswordRecovery(email)
-  .then(response => console.log("Recovery email sent",))
-  .catchError(error => console.log("Error sending recovery mail: %o", error));
+  .then(response => debugPrint("Recovery email sent"))
+  .catchError(error => debugPrint("Error sending recovery mail"));
 ```
 
 Example response object:
@@ -214,9 +212,9 @@ Example usage:
 auth
   .recover(recoveryLink)
   .then(response =>
-    console.log("Logged in as %s", )
+    debugPrint("Logged in as %s")
   )
-  .catchError(error => console.log("Failed to verify recover token: %o", error));
+  .catchError(error => debugPrint("Failed to verify recovery token"));
 ```
 
 Example response object:
@@ -307,11 +305,11 @@ const user = auth.currentUser();
 
 user
   .update({ email: "example@example.com", password: "password" })
-  .then(user => console.log("Updated user %s", user))
-  .catchError(error => {
-    console.log("Failed to update user: %o", error);
-    throw error;
-  });
+  .then(user => debugPrint("Updated user"))
+  .catchError((error) {
+    debugPrint("Failed to update user");
+    rethrow;
+  );
 ```
 
 Example response object:
@@ -358,10 +356,10 @@ Example usage:
 const user = auth.currentUser();
 const jwt = user.jwt();
 jwt
-  .then(response => console.log("This is a JWT token", response))
-  .catchError(error => {
-    console.log("Error fetching JWT token", error);
-    throw error;
+  .then(response => debugPrint("This is a JWT token"))
+  .catchError((error) {
+    debugPrint("Error fetching JWT token");
+    rethrow;
   });
 ```
 
@@ -383,10 +381,10 @@ Example usage:
 const user = auth.currentUser();
 user
   .logout()
-  .then(response => console.log("User logged out");)
-  .catchError(error => {
-    console.log("Failed to logout user: %o", error);
-    throw error;
+  .then(response => debugPrint("User logged out"))
+  .catchError((error){
+    debugPrint("Failed to logout user");
+    rethrow;
   });
 ```
 
