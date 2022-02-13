@@ -2,7 +2,7 @@ name: netlify_auth
 description: A Dart client library for the GoTrue API. It lets you create and authenticate users and is a building block for constructing the UI for signups, password recovery, login and logout.
 version: 0.0.1
 homepage: https://gotruedart-playground.netlify.com/
-documentation: https://gotruedart-playground.netlify.com/
+documentation: https://github.com/Mangielijah/gotrue-dart#readme
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
