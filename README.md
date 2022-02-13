@@ -12,13 +12,13 @@ Play around the methods via the [demo site](https://gotruedart-playground.netlif
 
 To use this plugin, add netlify_auth as a dependency in your pubspec.yaml file.
 ```js
-$ flutter pub add shared_preferences
+$ flutter pub add netlify_auth
 ```
 
 ## Usage
 
 ```js
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:netlify_auth/netlify_auth.dart';
 
 // Instantiate the GoTrue auth client with a GoTrueInit configuration
 
